@@ -1,0 +1,7 @@
+# Question: Check Even or Odd - Write a simple Python program to check whether a given number is even or odd.
+num = int(input("Enter a number: "))
+
+if num % 2 == 0:
+    print("The number is Even")
+else:
+    print("The number is Odd")
