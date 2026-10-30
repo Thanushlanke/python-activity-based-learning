@@ -1,12 +1,12 @@
-# Question: Progressive Electricity Billing - Calculate household bills using multiple consumption slabs and fixed charges.
-units = int(input("Enter units consumed: "))
-fixed_charge = 50
+
+# Progressive Electricity bill
+units = float(input("Enter units consumed: "))
 
 if units <= 100:
-    bill = (units * 2.0) + fixed_charge
-elif units <= 200:
-    bill = (100 * 2.0) + ((units - 100) * 3.5) + fixed_charge
+    total = units * 2.0
+elif units <= 300:
+    total = (100 * 2.0) + ((units - 100) * 3.5)
 else:
-    bill = (100 * 2.0) + (100 * 3.5) + ((units - 200) * 5.0) + fixed_charge
+    total = (100 * 2.0) + (200 * 3.5) + ((units - 300) * 5.0)
 
-print("Total Electricity Bill: Rs.", bill)
+print("Total Electricity Bill: ₹", round(total, 2))
