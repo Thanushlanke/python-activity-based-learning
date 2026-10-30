@@ -1,11 +1,12 @@
 # Question: Library Borrowing and Fine Reconciliation - Analyse book borrowing periods and calculate overdue fines.
-days_late = int(input("Enter number of days book is overdue: "))
+# Library Borrowing and Fine Reconciliation
+allowed_days = 10
+actual_days = int(input("Enter actual days taken to return the book: "))
 
-if days_late <= 5:
-    fine = days_late * 2
-elif days_late <= 10:
-    fine = (5 * 2) + ((days_late - 5) * 5)
+if actual_days <= allowed_days:
+    print("Book returned on time. No fine!")
 else:
-    fine = (5 * 2) + (5 * 5) + ((days_late - 10) * 10)
-
-print("Total Library Fine: Rs.", fine)
+    late_days = actual_days - allowed_days
+    fine = late_days * 5
+    print("Book is late by", late_days, "days.")
+    print("Total Fine to Pay: ₹", fine)
