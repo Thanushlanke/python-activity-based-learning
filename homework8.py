@@ -1,14 +1,12 @@
-# Question: Smart Canteen Order and Stock Management - Process successive customer orders, calculate bills, and update inventory.
-stock = {"Burger": 10, "Pizza": 5, "Tea": 20}
-price = {"Burger": 50, "Pizza": 120, "Tea": 15}
+# Smart Canteen Order and Stock Management
+stock = 10
+print("Available Burgers in Stock:", stock)
 
-item = input("Enter item to buy (Burger/Pizza/Tea): ")
-qty = int(input("Enter quantity: "))
+ordered = int(input("Enter number of burgers you want to buy: "))
 
-if item in stock and stock[item] >= qty:
-    stock[item] -= qty
-    total_bill = price[item] * qty
-    print("Order successful! Total Bill: Rs.", total_bill)
-    print("Remaining stock for", item, ":", stock[item])
+if ordered <= stock:
+    stock = stock - ordered
+    print("Order successful!")
+    print("Remaining stock in canteen:", stock)
 else:
-    print("Sorry, item out of stock or invalid name.")
+    print("Order failed! Not enough stock available.")
